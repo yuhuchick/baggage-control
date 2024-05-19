@@ -1,0 +1,15 @@
+.sift {
+    height: 65px;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 0;
+    padding-left: 10px;
+    box-shadow: 0 0 10px 5px #d2cfcf;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 1200px){
+    .sift {
+        height: auto;
+    }
+
+}

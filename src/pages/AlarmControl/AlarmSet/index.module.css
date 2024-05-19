@@ -1,0 +1,11 @@
+.alarm {
+    text-align: left;
+}
+.alarm p {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px dotted #ccc;
+}
+.setMargin {
+    margin-left: 15px;
+}

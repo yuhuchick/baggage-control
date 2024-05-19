@@ -1,0 +1,63 @@
+.container {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-content: stretch; */
+    background-color: #f5f5f5;
+}
+.videos{
+    width: 60%;
+    height: 60%;
+    /* background-color: aqua; */
+    
+}
+.alarmRecords{
+    width: 60%;
+    height: 40%;
+
+}
+.alarmInformation {
+    width: 40%;
+    height: 50%;
+}
+.devicesStatus {
+    width: 40%;
+    height: 50%;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+.titleBox {
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+}
+.videosBox {
+    width: 100%;
+    height: 92%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.recordsBox {
+    width: 100%;
+    height: 92%;
+}
+.informationBox {
+    width: 100%;
+    height: 92%;
+    overflow: auto;
+    padding-left: 10px;
+}
+.statusBox {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(135, 10, 30);
+}
+.cardBox {
+    background-color: #fff;
+    overflow: auto;
+    height: 100%;
+}

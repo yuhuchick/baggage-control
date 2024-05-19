@@ -1,0 +1,76 @@
+.addVideo {
+    display: flex;
+   
+    width: 100%;
+}
+@media screen and (max-width:1024px){
+    .player {
+        width: 100%!important;
+    }
+    .addVideo {
+        display: block;
+    }
+    .player_function {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width:1060px){
+    .drawingBoard {
+        /* width: 500px!important; */
+    }
+}
+.drawingBoard {
+    position: absolute;
+    width: 640px;
+    height: 360px;
+    z-index: 9999;
+}
+.player {
+    position: relative;
+    width: 640px;
+}
+.btn1 {
+    position: absolute;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: azure;
+    top: 47%;
+    left: 47%;
+    border: none;
+}
+.btn2 {
+    position: absolute;
+    z-index: 10;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    left: 3%;
+    bottom: 10%;
+}
+.player_function {
+    margin-left: 30px;
+}
+.confirm {
+    display: flex;
+}
+.confirm button {
+    margin-right: 5px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    border: none;
+    width: 60px;
+}
+.reserve {
+    background-color: aqua;
+}
+.reserve:hover {
+    background-color: red;
+}
+.addControl, .deleteControl {
+    background-color:rgb(147, 144, 139);
+}
