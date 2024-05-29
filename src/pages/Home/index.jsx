@@ -9,6 +9,8 @@ import MyCard from "./compoments/MyCard";
 import MyTimer from "./compoments/MyTimer";
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
+// import WebSocket from 'ws';
+
 const { Search } = Input;
 
 const {RangePicker} = DatePicker
@@ -159,9 +161,34 @@ const data2 = [
 ]
 
 export default function Home(){
-
+  
     //视频流
-    const [videos,setVideos] = useState([1,2,3,4,5,6,7,8,9])
+  const [videos,setVideos] = useState([])
+  useEffect(() => {
+    const ws = new WebSocket('ws://localhost:3001');
+
+    ws.onopen = function () {
+      console.log('连接成功！');
+    };
+
+    ws.onclose = function () {
+      console.log('WebSocket disconnected');
+    };
+
+    ws.onmessage = function (event) {
+      // 处理接收到的视频流数据
+      const videoData = event.data;
+      // 在这里更新视频播放器等
+      console.log('video',videoData);
+      setVideos(prevVideos => [videoData, ...prevVideos]);
+    };
+
+    return () => {
+      ws.close();
+    };
+  }, []);
+    
+
     // 渲染实时时间
 
     return(
@@ -173,11 +200,19 @@ export default function Home(){
                    <MyTimer/>
                 </div>
                 <div className={classes.videosBox}>
-                  {
+                  {/* {
                     videos.map((item,index) =>{
-                      return <MyVideo key={index}/>
+                      return <MyVideo key={index} props={item}/>
                     })
+                  } */}
+                  {
+                    videos.length ?
+                    <video controls autoPlay width={200} height={100}>
+                    <source src={URL.createObjectURL(new Blob([videos[0]]))} type="video/mp4" />
+                   </video>
+                    : <div>暂无视频流...</div>
                   }
+                
                   </div>
             </div>
             {/* 报警记录区域 */}
